@@ -1,3 +1,4 @@
+import Toast from '@/components/banner/Toast';
 import Intro from '@/components/home/Intro';
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
 
       <section id="about" className="mb-16">
         <h2 className="text-3xl font-bold mb-6">소개</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid-cols-1id gr md:grid-cols-2 gap-6">
           <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-transform duration-300">
             <h3 className="text-xl font-semibold mb-4">👨‍🎓 교육 및 경력</h3>
             <ul className="text-gray-800 dark:text-gray-300 leading-relaxed">
@@ -292,6 +293,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Toast text="복사되었습니다 👏🏻"></Toast>
     </main>
   );
 }

@@ -50,7 +50,7 @@ function Header({ initDark: isDark, onChangeDarkMode }: HeaderProps) {
           />
           <label
             htmlFor="darkModeToggle"
-            className="p-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500 cursor-pointer"
+            className="p-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 hover:outline-none hover:ring focus:ring-blue-500 cursor-pointer"
           >
             <i
               className={`fas ${isDark ? 'fa-sun text-yellow-400' : 'fa-moon text-gray-700 dark:text-yellow-400'}`}
