@@ -1,6 +1,38 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Layout from '@/components/layout/Layout';
+import Head from 'next/head';
+import { useState, useEffect } from 'react';
+
+const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  const [isDark, setIsDark] = useState<boolean>(true);
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    setIsDark(!theme || theme === 'dark');
+  }, []);
+
+  const handleDarkModeChange = (changeVal: boolean) => {
+    localStorage.setItem('theme', changeVal ? 'dark' : 'light');
+    if (changeVal) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    setIsDark(changeVal);
+  };
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Head>
+        <title>Sol&apos;s Portfolio</title>
+      </Head>
+      <Layout initDark={isDark} onChangeDarkMode={handleDarkModeChange}>
+        <Component {...pageProps} />
+      </Layout>
+    </QueryClientProvider>
+  );
 }
