@@ -3,18 +3,12 @@ import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Layout from '@/components/layout/Layout';
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [isDark, setIsDark] = useState<boolean | undefined>(true);
-
-  useEffect(() => {
-    const theme = localStorage.getItem('theme');
-    console.log('useEffect:', theme);
-    setIsDark(!theme || theme === 'dark');
-  }, []);
+  const [isDark, setIsDark] = useState<boolean | undefined>(undefined);
 
   const handleDarkModeChange = (changeVal: boolean) => {
     localStorage.setItem('theme', changeVal ? 'dark' : 'light');

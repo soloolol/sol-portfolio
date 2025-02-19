@@ -1,12 +1,19 @@
+import { useState, useEffect } from 'react';
 import { LayoutProps } from './Layout';
 
 export type HeaderProps = Pick<LayoutProps, 'initDark' | 'onChangeDarkMode'>;
 
-function Header({ initDark: isDark, onChangeDarkMode }: HeaderProps) {
+function Header({ initDark, onChangeDarkMode }: HeaderProps) {
+  const [isDark, setIsDark] = useState<boolean | undefined>(initDark);
+
   const handleDarkModeToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChangeDarkMode(e.target?.checked);
   };
-  console.log('header:', isDark);
+  console.log('header initDark:', initDark);
+
+  useEffect(() => {
+    if (initDark !== undefined) setIsDark(initDark);
+  }, []);
 
   // const mobileMenu = document.getElementById('mobileMenu');
   // // 모바일 메뉴 열기
@@ -41,21 +48,25 @@ function Header({ initDark: isDark, onChangeDarkMode }: HeaderProps) {
           <a href="#contact" className="hover:text-blue-500 transition-colors">
             연락처
           </a>
-          <input
-            type="checkbox"
-            checked={isDark}
-            id="darkModeToggle"
-            onChange={handleDarkModeToggle}
-            className="hidden" // 👈 기본 input을 숨기고 label을 스타일링
-          />
-          <label
-            htmlFor="darkModeToggle"
-            className="p-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 hover:outline-none hover:ring focus:ring-blue-500 cursor-pointer"
-          >
-            <i
-              className={`fas ${isDark ? 'fa-sun text-yellow-400' : 'fa-moon text-gray-700 dark:text-yellow-400'}`}
-            />
-          </label>
+          {isDark ?? (
+            <>
+              <input
+                type="checkbox"
+                checked={isDark}
+                id="darkModeToggle"
+                onChange={handleDarkModeToggle}
+                className="hidden" // 기본 input을 숨기고 label을 스타일링
+              />
+              <label
+                htmlFor="darkModeToggle"
+                className="p-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 hover:outline-none hover:ring focus:ring-blue-500 cursor-pointer"
+              >
+                <i
+                  className={`fas ${isDark ? 'fa-sun text-yellow-400' : 'fa-moon text-gray-700 dark:text-yellow-400'}`}
+                />
+              </label>
+            </>
+          )}
         </div>
         <button
           id="menuToggle"
