@@ -15,10 +15,9 @@ export default function Document() {
           {`(function(){
             if (!localStorage.theme || localStorage.theme === 'dark') {
               document.documentElement.classList.add('dark');
-              localStorage.setItem('theme','dark'); // 기본값을 dark로 설정
+              localStorage.theme = 'dark'; // 기본값을 dark로 설정
             } else {
               document.documentElement.classList.remove('dark');
-              localStorage.setItem('theme','light');
             }})();
           `}
         </Script>

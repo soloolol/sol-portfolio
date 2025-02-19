@@ -8,10 +8,11 @@ import { useState, useEffect } from 'react';
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [isDark, setIsDark] = useState<boolean>(true);
+  const [isDark, setIsDark] = useState<boolean | undefined>(true);
 
   useEffect(() => {
     const theme = localStorage.getItem('theme');
+    console.log('useEffect:', theme);
     setIsDark(!theme || theme === 'dark');
   }, []);
 
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
     } else {
       document.documentElement.classList.remove('dark');
     }
+    console.log('handleDarkModeChange:', changeVal);
     setIsDark(changeVal);
   };
 

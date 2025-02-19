@@ -17,6 +17,33 @@ export default {
         '2xl': '6rem',
       },
     },
+    extend: {
+      keyframes: {
+        wiggle: {
+          '0%': {
+            transform: 'rotate(3deg)',
+          },
+          '3%': {
+            transform: 'rotate(-3deg)',
+          },
+          '6%': {
+            transform: 'rotate(3deg)',
+          },
+          '9%': {
+            transform: 'rotate(-3deg)',
+          },
+          '12%': {
+            transform: 'rotate(3deg)',
+          },
+          '100%': {
+            transform: 'rotate(3deg)',
+          },
+        },
+      },
+    },
+    animation: {
+      wiggle: 'wiggle 3s infinite',
+    },
   },
   darkMode: 'selector',
   plugins: [],

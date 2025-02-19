@@ -6,63 +6,49 @@ export default function Home() {
     <main className="container max-w-4xl mx-auto px-6 py-12">
       <Intro />
 
-      <section id="about" className="mb-16">
-        <h2 className="text-3xl font-bold mb-6">소개</h2>
-        <div className="grid-cols-1id gr md:grid-cols-2 gap-6">
-          <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-transform duration-300">
-            <h3 className="text-xl font-semibold mb-4">👨‍🎓 교육 및 경력</h3>
-            <ul className="text-gray-800 dark:text-gray-300 leading-relaxed">
-              <li>👉 2022.11 ~ 2025.01 메이팜소프트 (풀스택 개발)</li>
-              <li>
-                👉 2022.07~ 2022.09 한국소프트웨어저작권협회 - 빅데이터 플랫폼
-                인재 양성 과정 수료
-              </li>
-              <li>
-                👉 2021.12 ~ 2022.05 멀티캠퍼스 - 데이터 엔지니어링 전문가 과정
-                수료 (844 시간)
-              </li>
-            </ul>
-          </article>
-          <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-transform duration-300">
-            <h3 className="text-xl font-semibold mb-4">🧑‍💻 자격증</h3>
-            <ul className="text-gray-800 dark:text-gray-300 leading-relaxed">
-              <li>👉</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="skills" className="mb-16">
+      <section id="skills" className="mt-16">
         <h2 className="text-3xl font-bold mb-6">기술</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300">
-            <i className="fa-brands fa-html5 text-4xl text-red-500 mb-1"></i>
+            <i className="fa-brands fa-html5 text-4xl text-red-500"></i>
             <h3 className="text-lg font-semibold">HTML5</h3>
           </div>
           <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300">
-            <i className="fa-brands fa-css3-alt text-4xl text-blue-500 mb-1"></i>
-            <h3 className="text-lg font-semibold">CSS3</h3>
-          </div>
-          <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300">
-            <i className="fa-brands fa-js text-4xl text-yellow-400 mb-1"></i>
+            <i className="fa-brands fa-js text-4xl text-yellow-400"></i>
             <h3 className="text-lg font-semibold">JavaScript</h3>
           </div>
           <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300">
-            <i className="fa-brands fa-react text-4xl text-blue-400 mb-1"></i>
+            <i className="fa-brands fa-java text-4xl text-orange-500"></i>
+            <h3 className="text-lg font-semibold">Java</h3>
+          </div>
+          <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300">
+            <i className="fa-brands fa-react text-4xl text-blue-400"></i>
             <h3 className="text-lg font-semibold">React</h3>
           </div>
           <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300">
-            <i className="fa-brands fa-vuejs text-4xl text-green-400 mb-1"></i>
+            <i className="fa-brands fa-vuejs text-4xl text-green-400"></i>
             <h3 className="text-lg font-semibold">Vue.js</h3>
           </div>
           <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300">
-            <i className="fa-brands fa-node text-4xl text-green-500 mb-1"></i>
-            <h3 className="text-lg font-semibold">Node.js</h3>
+            <img className="max-w-11 h-10 pb-0.5" src="next.jpg"></img>
+            <h3 className="text-lg font-semibold">Next.js</h3>
+          </div>
+          <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300">
+            <img className="max-w-11 h-10 pb-0.5" src="spring.svg"></img>
+            <h3 className="text-lg font-semibold">SpringBoot</h3>
+          </div>
+          <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300">
+            <img className="max-w-11 h-10 pb-0.5" src="elasticsearch.svg"></img>
+            <h3 className="text-lg font-semibold">Elasticsearch</h3>
+          </div>
+          <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300">
+            <img className="max-w-11 h-10 pb-0.5" src="tailwind.png"></img>
+            <h3 className="text-lg font-semibold">TailwindCSS</h3>
           </div>
         </div>
       </section>
 
-      <section id="projects" className="mb-16">
+      <section id="projects" className="mt-16">
         <h2 className="text-3xl font-bold mb-6">프로젝트</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <article className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
@@ -222,7 +208,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="mb-16">
+      <section id="about" className="mt-16">
+        <h2 className="text-3xl font-bold mb-6">👨‍🎓 교육 및 경력</h2>
+        <div className="grid grid-cols-1 gap-6">
+          <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-transform duration-300">
+            <ul className="text-gray-800 dark:text-gray-300 leading-relaxed">
+              <li>
+                <span className="mr-3">2023.01 ~ 2025.01</span> 👉 메이팜소프트
+                - 풀스택 개발
+              </li>
+              <li>
+                <span className="mr-3">2021.12 ~ 2022.05</span> 👉 멀티캠퍼스 -
+                데이터 엔지니어링 전문가 과정 수료
+              </li>
+              <li>
+                <span className="mr-3">2012.03 ~ 2017.02</span> 👉 건국대학교 -
+                의상디자인 학사 졸업
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" className="mt-16">
         <h2 className="text-3xl font-bold mb-6">연락처</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <form id="contactForm" className="space-y-4">

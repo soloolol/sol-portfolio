@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 
 export interface LayoutProps {
   children: ReactNode;
-  initDark: boolean;
+  initDark: boolean | undefined;
   onChangeDarkMode: (e: boolean) => void;
 }
 

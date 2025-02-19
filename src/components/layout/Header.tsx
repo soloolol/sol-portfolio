@@ -6,6 +6,7 @@ function Header({ initDark: isDark, onChangeDarkMode }: HeaderProps) {
   const handleDarkModeToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChangeDarkMode(e.target?.checked);
   };
+  console.log('header:', isDark);
 
   // const mobileMenu = document.getElementById('mobileMenu');
   // // 모바일 메뉴 열기
@@ -16,12 +17,11 @@ function Header({ initDark: isDark, onChangeDarkMode }: HeaderProps) {
   //   mobileMenu.classList.add('translate-x-full');
   // });
   return (
-    <header className="sticky top-0 bg-opacity-90 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 bg-opacity-90 backdrop-blur-lg">
       <nav className="container max-w-4xl mx-auto px-6 py-3 flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          <h1 className="text-2xl font-bold">SOL</h1>
           <p className="text-sm text-gray-500 dark:text-gray-300">
-            풀스택 개발자
+            Sol&apos;s PORTFOLIO
           </p>
         </div>
 
