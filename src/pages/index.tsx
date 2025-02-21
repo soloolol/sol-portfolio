@@ -1,7 +1,27 @@
-import Toast from '@/components/banner/Toast';
 import Intro from '@/components/home/Intro';
+import { toast } from '@/components/toast/store';
 
 export default function Home() {
+  const copyToClipboard = (text: string) => {
+    return navigator.clipboard.writeText(text);
+  };
+
+  const handleCopyEmail = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    const email = e.currentTarget.querySelector('span')?.textContent;
+
+    if (email) {
+      copyToClipboard(email)
+        .then(() => {
+          toast({ message: '클립보드에 복사되었습니다! 👏🏻' });
+        })
+        .catch((error) => {
+          console.error('복사 실패:', error);
+        });
+    }
+  };
+
   return (
     <main className="container max-w-4xl mx-auto px-6 py-12">
       <Intro />
@@ -294,14 +314,16 @@ export default function Home() {
               <i className="fa-brands fa-instagram"></i>
               <span>Instagram</span>
             </a>
-            <a className="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors">
+            <a
+              onClick={handleCopyEmail}
+              className="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+            >
               <i className="fa-regular fa-envelope"></i>
               <span>soloolol222@gmail.com</span>
             </a>
           </div>
         </div>
       </section>
-      <Toast text="복사되었습니다 👏🏻"></Toast>
     </main>
   );
 }

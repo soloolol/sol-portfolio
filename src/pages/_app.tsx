@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Layout from '@/components/layout/Layout';
 import Head from 'next/head';
 import { useState } from 'react';
+import ToastContainer from '@/components/toast/ToastContainer';
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout initDark={isDark} onChangeDarkMode={handleDarkModeChange}>
         <Component {...pageProps} />
       </Layout>
+      <ToastContainer />
     </QueryClientProvider>
   );
 }

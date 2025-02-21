@@ -48,21 +48,21 @@ function Header({ initDark, onChangeDarkMode }: HeaderProps) {
           <a href="#contact" className="hover:text-blue-500 transition-colors">
             연락처
           </a>
-          {isDark ?? (
+          {typeof isDark === 'boolean' && (
             <>
               <input
                 type="checkbox"
                 checked={isDark}
                 id="darkModeToggle"
                 onChange={handleDarkModeToggle}
-                className="hidden" // 기본 input을 숨기고 label을 스타일링
+                className="hidden"
               />
               <label
                 htmlFor="darkModeToggle"
                 className="p-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 hover:outline-none hover:ring focus:ring-blue-500 cursor-pointer"
               >
                 <i
-                  className={`fas ${isDark ? 'fa-sun text-yellow-400' : 'fa-moon text-gray-700 dark:text-yellow-400'}`}
+                  className={`fas ${isDark === true ? 'fa-sun' : 'fa-moon'} text-gray-700 dark:text-yellow-400`}
                 />
               </label>
             </>
