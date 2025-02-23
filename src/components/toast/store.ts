@@ -1,4 +1,3 @@
-// store.ts
 import { generateId } from '@/utils/generateId';
 
 type ToastItem = { id: string; message: string; duration?: number };
@@ -18,7 +17,7 @@ export const notify = () => {
 };
 
 export const toast = ({ message, duration = 1500 }: Omit<ToastItem, 'id'>) => {
-  const id = generateId(); // 서버에서도 동작하는 ID 생성
+  const id = generateId();
   toastList.set(id, { id, message, duration });
   notify();
 

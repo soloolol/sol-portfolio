@@ -9,7 +9,7 @@ import ToastContainer from '@/components/toast/ToastContainer';
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [isDark, setIsDark] = useState<boolean | undefined>(undefined);
+  const [initDark, setInitDark] = useState<boolean | undefined>(undefined);
 
   const handleDarkModeChange = (changeVal: boolean) => {
     localStorage.setItem('theme', changeVal ? 'dark' : 'light');
@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
       document.documentElement.classList.remove('dark');
     }
     console.log('handleDarkModeChange:', changeVal);
-    setIsDark(changeVal);
+    setInitDark(changeVal);
   };
 
   return (
@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Sol&apos;s Portfolio</title>
       </Head>
-      <Layout initDark={isDark} onChangeDarkMode={handleDarkModeChange}>
+      <Layout initDark={initDark} onChangeDarkMode={handleDarkModeChange}>
         <Component {...pageProps} />
       </Layout>
       <ToastContainer />

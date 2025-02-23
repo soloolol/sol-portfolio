@@ -13,10 +13,13 @@ export default function Document() {
         />
         <Script id="theme-init" strategy="beforeInteractive">
           {`(function(){
-            if (!localStorage.theme || localStorage.theme === 'dark') {
+            const theme = localStorage.getItem('theme');
+            if (!theme || theme === 'dark') {
+              console.log('#theme-init:', theme)
               document.documentElement.classList.add('dark');
-              localStorage.theme = 'dark'; // 기본값을 dark로 설정
+              localStorage.setItem('theme', 'dark');
             } else {
+              console.log('#theme-init:', theme)
               document.documentElement.classList.remove('dark');
             }})();
           `}

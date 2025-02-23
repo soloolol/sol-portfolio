@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <main className="container max-w-4xl mx-auto px-6 py-12">
+    <main className="container max-w-5xl mx-auto px-6 py-12">
       <Intro />
 
       <section id="skills" className="mt-16">
@@ -229,9 +229,9 @@ export default function Home() {
       </section>
 
       <section id="about" className="mt-16">
-        <h2 className="text-3xl font-bold mb-6">👨‍🎓 교육 및 경력</h2>
+        <h2 className="text-3xl font-bold mb-6">교육 및 경력</h2>
         <div className="grid grid-cols-1 gap-6">
-          <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-transform duration-300">
+          <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 max-sm:text-[15px] max-sm:px-3 hover:scale-105 transition-transform duration-300">
             <ul className="text-gray-800 dark:text-gray-300 leading-relaxed">
               <li>
                 <span className="mr-3">2023.01 ~ 2025.01</span> 👉 메이팜소프트

@@ -2,7 +2,7 @@ function Intro() {
   return (
     <section
       id="into"
-      className="flex flex-col h-96 md:flex-row justify-between items-center mb-20"
+      className="flex flex-col min-h-96 md:flex-row justify-between items-center mb-20"
     >
       <div className="shrink-0 mb-6 md:mb-0 md:mr-10">
         {/* <img
