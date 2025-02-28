@@ -1,7 +1,21 @@
+import { useQuery } from '@tanstack/react-query';
+import type { Project } from '@/pages/api/project';
+import axios from 'axios';
 import Intro from '@/components/home/Intro';
 import { toast } from '@/components/toast/store';
 
 export default function Home() {
+  const {
+    isLoading,
+    error,
+    data: projects,
+  } = useQuery<Project[], Error>({
+    queryKey: ['projects'],
+    queryFn: () =>
+      axios.get('http://localhost:3000/api/project').then((res) => res.data),
+    initialData: [],
+  });
+
   const copyToClipboard = (text: string) => {
     return navigator.clipboard.writeText(text);
   };
@@ -71,115 +85,77 @@ export default function Home() {
       <section id="projects" className="mt-16">
         <h2 className="text-3xl font-bold mb-6">프로젝트</h2>
         <div className="grid grid-cols-1 gap-6">
-          <article className="flex flex-col md:flex-row bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
-            <div className="md:shrink-0 md:basis-1/3">
-              <img
-                className="w-full h-48 object-cover"
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600"
-                alt="포트폴리오 웹사이트 이미지"
-              />
-              <div className="grid grid-cols-1 gap-2 p-3 md:p-6">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
-                  포트폴리오 웹사이트
-                </h3>
-                <div className="flex flex-wrap">
-                  <span className="bg-gray-200 dark:bg-gray-700 text-xs mr-0.5 mb-0.5 px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">
-                    React
-                  </span>
-                  <span className="bg-gray-200 dark:bg-gray-700 text-xs mr-0.5 mb-0.5 px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">
-                    NextJs
-                  </span>
-                  <span className="bg-gray-200 dark:bg-gray-700 text-xs mr-0.5 mb-0.5 px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">
-                    TailwindCSS
-                  </span>
+          {isLoading && <p>...Loading</p>}
+          {error && <p className="text-red-700">{error.message}</p>}
+          {projects.map((item) => (
+            <article
+              key={item.name}
+              className="flex flex-col md:flex-row bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+            >
+              <div className="md:shrink-0 md:basis-1/3">
+                <img
+                  className="w-full h-48 object-cover"
+                  src={
+                    item.imgSrc ||
+                    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600'
+                  }
+                  alt={item.name + ' 이미지'}
+                />
+                <div className="grid grid-cols-1 gap-2 p-3 md:p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
+                    {item.name}
+                  </h3>
+                  <div className="flex flex-wrap">
+                    {item.techStack.map((stack) => (
+                      <span className="bg-gray-200 dark:bg-gray-700 text-xs mr-0.5 mb-0.5 px-2 py-0.5 rounded-md border border-gray-300 dark:border-gray-600">
+                        {stack}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex justify-start space-x-2">
+                    {item.gitHub && (
+                      <a
+                        href={item.gitHub}
+                        className="text-sm bg-gray-800 dark:bg-gray-300 text-white dark:text-gray-800 px-3 py-1 rounded-md"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                    {item.demoUrl && (
+                      <a
+                        href={item.demoUrl}
+                        className="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
+                      >
+                        바로가기
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <div className="flex justify-start space-x-2">
-                  <a
-                    href="#"
-                    className="text-sm bg-gray-800 dark:bg-gray-300 text-white dark:text-gray-800 px-3 py-1 rounded-md"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="#"
-                    className="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
-                  >
-                    라이브 데모
-                  </a>
+              </div>
+              <div className="basis-auto flex flex-col justify-center p-3 md:p-6">
+                <div className="flex flex-col justify-center mb-3">
+                  <h4 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-100">
+                    {`${item.startDate} ~ ${item.endDate}`}
+                  </h4>
+                  <p>{item.summary}</p>
                 </div>
-              </div>
-            </div>
-            <div className="basis-auto grid grid-cols-1 grid-rows-4 gap-3 p-3 md:p-6">
-              <div className="row-span-1 col-span-1 flex flex-col justify-center">
-                <h4>
-                  <b>2025.02 - 2025.02</b>
-                </h4>
-                <p></p>
-              </div>
-              <div className="row-span-3 flex flex-col justify-center">
-                <p>key contributions</p>
-                <p></p>
-              </div>
-            </div>
-          </article>
-          <article className="flex flex-col md:flex-row justify-center bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
-            <div className="md:shrink-0 md:basis-1/3">
-              <img
-                className="w-full h-48 object-cover"
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600"
-                alt="경찰청 사이버수사포털 시스템 이미지"
-              />
-              <div className="grid grid-cols-1 gap-2 p-3 md:p-6">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
-                  경찰청 사이버수사포털 시스템
-                </h3>
-                <div className="flex flex-wrap">
-                  <span className="bg-gray-200 dark:bg-gray-700 text-xs mr-0.5 mb-0.5 px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">
-                    JavaScript
-                  </span>
-                  <span className="bg-gray-200 dark:bg-gray-700 text-xs mr-0.5 mb-0.5 px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">
-                    Java
-                  </span>
-                  <span className="bg-gray-200 dark:bg-gray-700 text-xs mr-0.5 mb-0.5 px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">
-                    SpringBoot
-                  </span>
-                  <span className="bg-gray-200 dark:bg-gray-700 text-xs mr-0.5 mb-0.5 px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">
-                    Elasticsearch
-                  </span>
-                  <span className="bg-gray-200 dark:bg-gray-700 text-xs mr-0.5 mb-0.5 px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">
-                    Elasticsearch
-                  </span>
+                <div className="flex flex-col justify-center">
+                  <p className="whitespace-pre-wrap">{item.impact}</p>
                 </div>
-                <div className="flex justify-start space-x-2"></div>
+                {item.learningPoint && (
+                  <div className="flex flex-col justify-center mt-3">
+                    <p className="whitespace-pre-wrap text-sm">
+                      ✅
+                      <a className="underline font-semibold italic decoration-sky-500 mx-3">
+                        learning point :
+                      </a>
+                      {item.learningPoint}
+                    </p>
+                  </div>
+                )}
               </div>
-            </div>
-            <div className="basis-auto grid grid-cols-1 grid-rows-4 gap-3 p-3 md:p-6">
-              <div className="row-span-1 col-span-1 flex flex-col justify-center">
-                <h4>
-                  <b>2024.08 - 2024.12</b>
-                </h4>
-                <p>
-                  여러 수사 시스템을 연계하는 포털시스템 개편 및 검색 고도화
-                  프로젝트 개발 리딩
-                </p>
-              </div>
-              <div className="row-span-3 flex flex-col justify-center">
-                <p>key contributions </p>
-                <p>
-                  - 레거시 프로젝트 리팩토링 : - 백엔드 개선: 요청 데이터와
-                  화면이 강하게 결합된 기존 응답 구조를 분리 유연한 화면 대응 및
-                  코드 재사용성 증대 - 프론트엔드 최적화: 라이브러리 최신화 및
-                  불필요한 라이브러리 제거, 반복 요청 구조 개선 브라우저 로딩
-                  시간 단축 - 검색 화면 설계 : 다양한 옵션값에 따라 유사하지만
-                  다른 화면을 비동기적으로 생성해야 하는 요구사항 반영을 위해
-                  다형성과 재사용성을 극대화한 컴포넌트 구조 설계 및 개발 - 고객
-                  요구사항 전달이 늦고 불분명한 상황에서도 선제적 대응 및 개발
-                  진행하여 9M/M 프로젝트를 6M/M으로 단축하여 기한 내 성공적으로
-                  완료
-                </p>
-              </div>
-            </div>
-          </article>
+            </article>
+          ))}
         </div>
       </section>
 
