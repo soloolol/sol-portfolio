@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import { PluginAPI } from 'tailwindcss/types/config';
 
 export default {
   content: [
@@ -46,5 +47,16 @@ export default {
     },
   },
   darkMode: 'selector',
-  plugins: [],
+  plugins: [
+    function ({ addComponents }: PluginAPI) {
+      addComponents({
+        ul: {
+          'list-style-type': 'disc',
+        },
+        'ul ul': {
+          'list-style-type': "'- '",
+        },
+      });
+    },
+  ],
 } satisfies Config;

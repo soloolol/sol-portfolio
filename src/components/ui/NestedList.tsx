@@ -8,7 +8,7 @@ export const NestedListComponent: React.FC<{ items: NestedList[] }> = ({
   items,
 }) => {
   return (
-    <ul className="list-disc list-inside">
+    <ul className="list-inside">
       {items.map((item) => (
         <li className="pl-3" key={item.id}>
           {item.label}
