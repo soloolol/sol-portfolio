@@ -55,7 +55,7 @@ export default function Home() {
         </div>
         <div className="text-center md:text-right">
           <h1 className="text-4xl font-bold mb-2">SOL</h1>
-          <p className="text-xl mb-4">스탯 성장형 개발자</p>
+          <p className="text-xl mb-4">크리에이티브 엔지니어</p>
           <p className="text-gray-600 dark:text-gray-400">
             다양한 기술 스택을 경험하며 빠르게 배우고 성장해온 개발자 <br />
             데이터 엔지니어링부터 백엔드, 프론트엔드까지 폭넓은 이해를 바탕으로,
