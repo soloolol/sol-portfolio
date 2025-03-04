@@ -11,8 +11,7 @@ export default function Home() {
     data: projects,
   } = useQuery<Project[], Error>({
     queryKey: ['projects'],
-    queryFn: () =>
-      axios.get('http://localhost:3000/api/project').then((res) => res.data),
+    queryFn: () => axios.get('/api/project').then((res) => res.data),
     initialData: [],
   });
 
