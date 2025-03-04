@@ -17,6 +17,7 @@ const eslintConfig = [
       'react/jsx-no-target-blank': 'off',
       'react/self-closing-comp': 'warn',
       'react/prop-types': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
 ];
