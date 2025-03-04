@@ -1,8 +1,30 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, QueryClient, dehydrate } from '@tanstack/react-query';
+import { GetServerSideProps } from 'next';
 import type { Project } from '@/pages/api/project';
 import axios from 'axios';
 import { toast } from '@/components/toast/store';
 import { NestedListComponent } from '@/components/ui/NestedList';
+
+const fetchProjects = async () => {
+  const { data } = await axios.get('/api/project');
+  return data;
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const queryClient = new QueryClient();
+
+  // React Query에 데이터 미리 가져와 저장
+  await queryClient.prefetchQuery({
+    queryKey: ['projects'],
+    queryFn: fetchProjects,
+  });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};
 
 export default function Home() {
   const {
@@ -11,8 +33,7 @@ export default function Home() {
     data: projects,
   } = useQuery<Project[], Error>({
     queryKey: ['projects'],
-    queryFn: () => axios.get('/api/project').then((res) => res.data),
-    initialData: [],
+    queryFn: fetchProjects,
   });
 
   const copyToClipboard = (text: string) => {
@@ -113,7 +134,7 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-6">
           {isLoading && <p>...Loading</p>}
           {error && <p className="text-red-700">{error.message}</p>}
-          {projects.map((item) => (
+          {projects?.map((item) => (
             <article
               key={item.name}
               className="flex flex-col md:flex-row bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
