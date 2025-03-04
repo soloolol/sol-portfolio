@@ -20,6 +20,8 @@ const data: Project[] = [
     name: '포트폴리오 웹사이트',
     techStack: ['React', 'Next.js', 'TailwindCSS'],
     gitHub: 'https://github.com/soloolol/sol-portfolio',
+    demoUrl: 'https://sol-portfolio.vercel.app',
+    imgSrc: 'portfolio-website.png',
     startDate: '2025-02',
     endDate: '2025-02',
     summary: '개인 포트폴리오 웹사이트 제작 및 배포',
@@ -31,7 +33,7 @@ const data: Project[] = [
           {
             id: '1-1',
             label:
-              '`_document.tsx`에서 `localStorage` 값을 미리 반영해 불필요한 리렌더링을 방지하고, 상태 동기화 문제를 해결하여 초기 렌더링 성능 개선',
+              'app과 localstorage의 상태 값 동기화 로직을 개선하여 불필요한 재렌더링 없이 테마 적용되도록 최적화',
           },
         ],
       },
@@ -53,6 +55,7 @@ const data: Project[] = [
   {
     name: '경찰청 사이버수사포털 시스템',
     techStack: ['JavaScript', 'Java', 'Spring Boot', 'SVN'],
+    imgSrc: 'cyber-portal.png',
     startDate: '2024-08',
     endDate: '2024-12',
     summary: '경찰청 포털 시스템 개편 및 검색 고도화 프로젝트 – 개발 리딩',
@@ -221,13 +224,12 @@ const data: Project[] = [
     impact: [
       {
         id: '1',
-        label:
-          '초급 개발자로서 중급 수준의 난이도를 요구하는 프로젝트 주요 페이지를 기한 내 100% 개발 완료',
+        label: '주요 서비스 페이지 기한 내 100% 개발 완료',
         children: [
           {
             id: '1-1',
             label:
-              '책임감을 가지고 업무 외 시간에 추가 학습을 병행하며 기술적 도전 과제를 해결, 중급 개발자 수준의 성과를 이끌어냄',
+              '경력 이상의 책임이 요구되는 작업을 맡아, 업무 외 추가 학습을 병행하며 성공적으로 수행. 주어진 역할을 넘어 주도적으로 해결하며, 중급 개발자 수준의 성과를 창출',
           },
         ],
       },

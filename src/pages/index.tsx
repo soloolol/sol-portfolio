@@ -215,8 +215,8 @@ export default function Home() {
 
       <section id="contact" className="mt-16">
         <h2 className="text-3xl font-bold mb-6">연락처</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <form id="contactForm" className="space-y-4">
+        <div className="">
+          {/* <form id="contactForm" className="space-y-4">
             <div>
               <label htmlFor="name" className="block mb-1 font-medium">
                 이름
@@ -259,7 +259,7 @@ export default function Home() {
             >
               이메일 보내기
             </button>
-          </form>
+          </form> */}
           <div className="flex flex-col items-center justify-center gap-y-4">
             <a
               href="https://github.com/soloolol"
@@ -270,12 +270,12 @@ export default function Home() {
               <span>GitHub</span>
             </a>
             <a
-              href="#"
+              href="https://torybean.tistory.com/"
               target="_blank"
               className="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
             >
-              <i className="fa-brands fa-instagram"></i>
-              <span>Instagram</span>
+              <i className="fa-brands fa-b"></i>
+              <span>Blog</span>
             </a>
             <a
               onClick={handleCopyEmail}
