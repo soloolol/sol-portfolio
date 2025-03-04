@@ -4,9 +4,7 @@ export type NestedList = {
   children?: NestedList[];
 };
 
-export const NestedListComponent: React.FC<{ items: NestedList[] }> = ({
-  items,
-}) => {
+export function NestedListComponent({ items }: { items: NestedList[] }) {
   return (
     <ul className="list-inside">
       {items.map((item) => (
@@ -17,4 +15,4 @@ export const NestedListComponent: React.FC<{ items: NestedList[] }> = ({
       ))}
     </ul>
   );
-};
+}
