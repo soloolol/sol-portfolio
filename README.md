@@ -36,3 +36,8 @@ npm install  # or yarn install
 # 4. Run the development server
 npm run dev  # or yarn dev
 ```
+
+📸 Preview
+
+✨ Live Demo
+🔗 https://sol-portfolio.vercel.app
