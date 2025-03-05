@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import type { ApiResponse } from '@/types/api';
 import type { NestedList } from '@/components/ui/NestedList';
 
 export type Project = {
@@ -241,15 +240,13 @@ const data: Project[] = [
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ApiResponse<Project[]>>
+  res: NextApiResponse<Project[]>
 ) {
   switch (req.method) {
     case 'GET':
       return res.status(200).json(data);
 
     default:
-      return res
-        .status(405)
-        .json({ status: 405, message: 'Method Not Allowed' });
+      return res.status(405);
   }
 }
