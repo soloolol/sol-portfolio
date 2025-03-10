@@ -2,35 +2,30 @@ import { useState, useEffect } from 'react';
 import { LayoutProps } from './Layout';
 import { AsideProps } from './Aside';
 
-type HeaderProps = Pick<LayoutProps, 'initDark' | 'onChangeDarkMode'> & Pick<AsideProps, 'onToggleMenu'>;
+type HeaderProps = Pick<LayoutProps, 'initDark' | 'onChangeDarkMode'> &
+  Pick<AsideProps, 'onToggleMenu'>;
 
 function Header({ initDark, onChangeDarkMode, onToggleMenu }: HeaderProps) {
   const [isDark, setIsDark] = useState<boolean | undefined>(initDark);
 
   const handleDarkModeToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target?.checked;
-    console.log('3 header handleDarkModeToggle:', val);
     onChangeDarkMode(val);
   };
 
-  const handleToggleMenu = () =>{
+  const handleToggleMenu = () => {
     onToggleMenu();
-  }
+  };
 
   useEffect(() => {
-    console.log("start useEffect[initDark]:", initDark)
-    if (typeof initDark === 'undefined'){
-      const initLocalstorageDark = document.documentElement.classList.contains('dark');
-      console.log("1 최초 input checked:", initLocalstorageDark)
-      setIsDark(initLocalstorageDark); 
+    if (typeof initDark === 'undefined') {
+      const initLocalstorageDark =
+        document.documentElement.classList.contains('dark');
+      setIsDark(initLocalstorageDark);
     } else {
       setIsDark(initDark);
     }
   }, [initDark]);
-  
-  useEffect(()=>{
-    console.log('header useEffect[isDark] isDark:', isDark);
-  },[isDark])
 
   return (
     <header className="sticky top-0 z-50 bg-opacity-90 backdrop-blur-lg">
@@ -56,7 +51,7 @@ function Header({ initDark, onChangeDarkMode, onToggleMenu }: HeaderProps) {
           </a>
           <input
             type="checkbox"
-            checked={ isDark ?? true }
+            checked={isDark ?? true}
             id="darkModeToggle"
             onChange={handleDarkModeToggle}
             className="hidden"
@@ -66,7 +61,11 @@ function Header({ initDark, onChangeDarkMode, onToggleMenu }: HeaderProps) {
             className="p-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 hover:outline-none hover:ring focus:ring-blue-500 cursor-pointer"
           >
             <i
-              className={ isDark ? 'fas fa-sun text-yellow-400' : 'fas fa-moon text-gray-700'}
+              className={
+                isDark
+                  ? 'fas fa-sun text-yellow-400'
+                  : 'fas fa-moon text-gray-700'
+              }
             />
           </label>
         </div>
