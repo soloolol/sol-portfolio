@@ -14,8 +14,13 @@ const data: Project[] = [
     impact: [
       {
         id: '1',
-        label: '다크 모드 초기 렌더링 최적화',
+        label: '초기 렌더링 최적화',
         children: [
+          {
+            id: '1-2',
+            label:
+              '데이터 변경 빈도가 낮은 인덱스 페이지에 ISR과 Revalidation API를 적용하여 렌더링 및 리소스 요청을 최적화, 성능과 효율성 개선',
+          },
           {
             id: '1-1',
             label:
@@ -36,7 +41,7 @@ const data: Project[] = [
       },
     ],
     learningPoint:
-      '이벤트 기반 패턴(Subscribe/Notify)을 활용하여, 컴포넌트가 직접 상태를 감지하지 않고 변경 시에만 UI를 업데이트하도록 구현. 이를 통해 상태 관리 라이브러리(Context API, Redux 등) 없이도 전역 상태를 효율적으로 관리할 수 있음을 학습',
+      '이벤트 기반 패턴(Subscribe/Notify)을 활용하여, 컴포넌트가 직접 상태를 감지하지 않고 변경 시에만 UI를 업데이트하도록 구현. 이를 통해 상태 관리 라이브러리 없이도 전역 상태를 효율적으로 관리할 수 있음을 학습',
   },
   {
     name: '경찰청 사이버수사포털 시스템',
