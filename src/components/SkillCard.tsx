@@ -1,4 +1,4 @@
-import type { Skill } from '@/pages/api/skills';
+import type { Skill } from '@/types/skill';
 
 export default function SkillCard({
   name,
