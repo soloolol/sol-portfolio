@@ -1,18 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import type { NestedList } from '@/components/ui/NestedList';
-
-export type Project = {
-  name: string;
-  imgSrc?: string;
-  techStack: string[];
-  gitHub?: string;
-  demoUrl?: string;
-  startDate: string;
-  endDate: string;
-  summary: string;
-  impact: NestedList[];
-  learningPoint?: string;
-};
+import type { Project } from '@/types/project';
 
 const data: Project[] = [
   {

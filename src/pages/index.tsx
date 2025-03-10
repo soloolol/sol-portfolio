@@ -2,9 +2,9 @@ import { InferGetStaticPropsType } from 'next';
 import axios from 'axios';
 import { toast } from '@/components/toast/store';
 import SkillList from '@/components/SkillList';
-import type { Skill } from '@/pages/api/skills';
+import type { Skill } from '@/types/skill';
 import ProjectList from '@/components/ProjectList';
-import type { Project } from '@/pages/api/projects';
+import type { Project } from '@/types/project';
 
 const fetchSkills = async () => {
   try {

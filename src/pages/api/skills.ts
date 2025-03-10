@@ -1,13 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-export type Skill = {
-  name: string;
-  tagStyle: 'i' | 'img';
-  fontAwesomeClass?: string;
-  iconColor?: string;
-  imageSrc?: string;
-  imageAlt?: string;
-};
+import type { Skill } from '@/types/skill';
 
 const data: Skill[] = [
   {

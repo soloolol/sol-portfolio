@@ -1,11 +1,7 @@
 import { NestedListComponent } from '@/components/ui/NestedList';
-import type { Project } from '@/pages/api/projects';
+import type { Project } from '@/types/project';
 
-interface ProjectListProps {
-  projects: Project[];
-}
-
-export default function ProjectList({ projects }: ProjectListProps) {
+export default function ProjectList({ projects }: { projects: Project[] }) {
   return (
     <div className="grid grid-cols-1 gap-6">
       {projects?.map((item) => (
