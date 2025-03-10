@@ -14,8 +14,13 @@ const data: Project[] = [
     impact: [
       {
         id: '1',
-        label: '다크 모드 초기 렌더링 최적화',
+        label: '초기 렌더링 최적화',
         children: [
+          {
+            id: '1-2',
+            label:
+              '데이터 변경 빈도가 낮은 인덱스 페이지에 ISR과 Revalidation API를 적용하여 렌더링 및 리소스 요청을 최적화, 성능과 효율성 개선',
+          },
           {
             id: '1-1',
             label:
