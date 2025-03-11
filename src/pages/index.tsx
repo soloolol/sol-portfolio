@@ -70,7 +70,7 @@ export default function Home({
   return (
     <main className="container max-w-5xl mx-auto px-6 py-12">
       <section
-        id="into"
+        id="intro"
         className="flex flex-col min-h-96 md:flex-row justify-between items-center mb-20"
       >
         <div className="shrink-0 mb-6 md:mb-0 md:mr-10">
@@ -114,7 +114,7 @@ export default function Home({
               </li>
               <li>
                 <span className="mr-3">2021.12 ~ 2022.05</span> 👉 멀티캠퍼스 -
-                데이터 엔지니어링 전문가 과정 수료
+                데이터 엔지니어링 전문가 과정 수료 (844시간)
               </li>
               <li>
                 <span className="mr-3">2012.03 ~ 2017.02</span> 👉 건국대학교 -
