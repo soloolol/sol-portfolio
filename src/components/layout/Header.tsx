@@ -1,31 +1,10 @@
-import { useState, useEffect } from 'react';
-import { LayoutProps } from './Layout';
+import DarkToggleButton from '../DarkToggleButton';
 import { AsideProps } from './Aside';
 
-type HeaderProps = Pick<LayoutProps, 'initDark' | 'onChangeDarkMode'> &
-  Pick<AsideProps, 'onToggleMenu'>;
-
-function Header({ initDark, onChangeDarkMode, onToggleMenu }: HeaderProps) {
-  const [isDark, setIsDark] = useState<boolean | undefined>(initDark);
-
-  const handleDarkModeToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target?.checked;
-    onChangeDarkMode(val);
-  };
-
+function Header({ onToggleMenu }: Pick<AsideProps, 'onToggleMenu'>) {
   const handleToggleMenu = () => {
     onToggleMenu();
   };
-
-  useEffect(() => {
-    if (typeof initDark === 'undefined') {
-      const initLocalstorageDark =
-        document.documentElement.classList.contains('dark');
-      setIsDark(initLocalstorageDark);
-    } else {
-      setIsDark(initDark);
-    }
-  }, [initDark]);
 
   return (
     <header className="sticky top-0 z-50 bg-opacity-90 backdrop-blur-lg">
@@ -49,25 +28,7 @@ function Header({ initDark, onChangeDarkMode, onToggleMenu }: HeaderProps) {
           <a href="#contact" className="hover:text-blue-500 transition-colors">
             연락처
           </a>
-          <input
-            type="checkbox"
-            checked={isDark ?? true}
-            id="darkModeToggle"
-            onChange={handleDarkModeToggle}
-            className="hidden"
-          />
-          <label
-            htmlFor="darkModeToggle"
-            className="p-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 hover:outline-none hover:ring focus:ring-blue-500 cursor-pointer"
-          >
-            <i
-              className={
-                isDark
-                  ? 'fas fa-sun text-yellow-400'
-                  : 'fas fa-moon text-gray-700'
-              }
-            />
-          </label>
+          <DarkToggleButton />
         </div>
         <button
           id="menuToggle"

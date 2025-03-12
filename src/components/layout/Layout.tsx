@@ -3,21 +3,15 @@ import Aside from './Aside';
 import Footer from './Footer';
 import { ReactNode, useState } from 'react';
 
-export interface LayoutProps {
-  children: ReactNode;
-  initDark?: boolean | undefined;
-  onChangeDarkMode: (isDark: boolean) => void;
-}
-
-function Layout({ children, initDark, onChangeDarkMode }: LayoutProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+function Layout({ children }: { children: ReactNode }) {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const onToggleMenu = () => {
-    setIsMenuOpen((prev)=>!prev);
-  }
+    setIsMenuOpen((prev) => !prev);
+  };
   return (
     <>
-      <Header initDark={initDark} onChangeDarkMode={onChangeDarkMode} onToggleMenu={onToggleMenu} />
-      <Aside isMenuOpen={isMenuOpen} onToggleMenu={onToggleMenu}/>
+      <Header onToggleMenu={onToggleMenu} />
+      <Aside isMenuOpen={isMenuOpen} onToggleMenu={onToggleMenu} />
       {children}
       <Footer />
     </>
