@@ -24,7 +24,7 @@ const data: Project[] = [
           {
             id: '1-1',
             label:
-              'app과 localstorage의 상태 값 동기화 로직을 개선하여 불필요한 재렌더링 없이 테마 적용되도록 최적화',
+              'localstorage의 다크모드 상태 값 동기화 로직 개선하여 테마 초기 적용시 재렌더링 국소화',
           },
         ],
       },
