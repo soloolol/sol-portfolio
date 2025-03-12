@@ -1,34 +1,8 @@
 import { InferGetStaticPropsType } from 'next';
-import axios from 'axios';
 import { toast } from '@/components/toast/store';
 import SkillList from '@/components/SkillList';
-import type { Skill } from '@/types/skill';
+import { fetchSkills, fetchProjects } from '@/lib/api';
 import ProjectList from '@/components/ProjectList';
-import type { Project } from '@/types/project';
-
-const fetchSkills = async () => {
-  try {
-    const { data } = await axios.get<Skill[]>(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/skills`
-    );
-    return data;
-  } catch (err) {
-    console.error('Error fetching skills:', err);
-    return [];
-  }
-};
-
-const fetchProjects = async () => {
-  try {
-    const { data } = await axios.get<Project[]>(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects`
-    );
-    return data;
-  } catch (err) {
-    console.error('Error fetching projects:', err);
-    return [];
-  }
-};
 
 export const getStaticProps = async () => {
   const [skills, projects] = await Promise.all([
