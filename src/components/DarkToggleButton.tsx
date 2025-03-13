@@ -36,7 +36,7 @@ export default function DarkToggleButton() {
       />
       <label
         htmlFor="darkModeToggle"
-        className="p-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 hover:outline-none hover:ring focus:ring-blue-500 cursor-pointer"
+        className="p-2 w-8 h-7 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 hover:outline-none hover:ring focus:ring-blue-500 cursor-pointer"
       >
         <i
           className={

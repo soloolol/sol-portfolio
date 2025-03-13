@@ -204,23 +204,23 @@ const data: Project[] = [
     ],
   },
   {
-    name: '현대제철 전자상거래 플랫폼',
+    name: '현대제철 전자 상거래 플랫폼',
     techStack: ['Vue.js', 'GitLab', 'Redmine'],
     startDate: '2023-01',
     endDate: '2023-04',
     imgSrc: 'hyundai-steel.png',
     demoUrl: 'https://hcorestore.hyundai-steel.com',
     summary:
-      "현대제철 HCORE-STORE, PC/모바일 '바로구매', '제품 검색' 등 제품 검색 파트 프론트엔드 개발",
+      "현대제철 HCORE-STORE, 철강 제품 전자 상거래 프로젝트",
     impact: [
       {
         id: '1',
-        label: '주요 서비스 페이지 기한 내 100% 개발 완료',
+        label: "PC/모바일 '바로구매', '제품 검색' 등 제품 검색 파트 프론트엔드 개발",
         children: [
           {
             id: '1-1',
             label:
-              '경력 이상의 책임이 요구되는 작업을 맡아, 업무 외 추가 학습을 병행하며 성공적으로 수행. 주어진 역할을 넘어 주도적으로 해결하며, 중급 개발자 수준의 성과를 창출',
+              '경력 이상의 책임이 요구되는 작업을 맡아, 업무 외 추가 학습을 병행하며 성공적으로 수행. 주어진 역할을 넘어 주도적으로 해결',
           },
         ],
       },

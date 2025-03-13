@@ -14,7 +14,7 @@ function Header({ onToggleMenu }: Pick<AsideProps, 'onToggleMenu'>) {
             Sol&apos;s PORTFOLIO
           </p>
         </div>
-
+        <div className="flex items-center gap-x-6">
         <div className="hidden md:flex items-center gap-x-6">
           <a href="#intro" className="hover:text-blue-500 transition-colors">
             홈
@@ -28,8 +28,9 @@ function Header({ onToggleMenu }: Pick<AsideProps, 'onToggleMenu'>) {
           <a href="#contact" className="hover:text-blue-500 transition-colors">
             연락처
           </a>
-          <DarkToggleButton />
         </div>
+        <div className="flex items-center gap-x-2">
+        <DarkToggleButton />
         <button
           id="menuToggle"
           onClick={handleToggleMenu}
@@ -37,6 +38,9 @@ function Header({ onToggleMenu }: Pick<AsideProps, 'onToggleMenu'>) {
         >
           <i className="fas fa-bars text-2xl" />
         </button>
+        </div>
+        </div>
+
       </nav>
     </header>
   );
