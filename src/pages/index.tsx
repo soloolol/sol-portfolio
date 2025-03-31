@@ -93,7 +93,7 @@ export default function Home({
               </li>
               <li>
                 <span className="mr-3">2012.03 ~ 2017.02</span> 👉 건국대학교 -
-                의상디자인 학사 졸업
+                자율전공학부(자연계열) 입학, 의상디자인 학사 졸업
               </li>
             </ul>
           </article>

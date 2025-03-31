@@ -131,7 +131,7 @@ const data: Project[] = [
   },
   {
     name: '한국토지주택공사 지식관리시스템',
-    techStack: ['JavaScript', 'Java', 'Spring Boot', 'Thymeleaf', 'SVN'],
+    techStack: ['JavaScript', 'Java', 'Spring Boot', 'Elasticsearch', 'SVN'],
     startDate: '2024-03',
     endDate: '2024-05',
     summary: '한국토지주택공사 지식관리시스템 구축 – 검색 파트 개발',
@@ -210,12 +210,12 @@ const data: Project[] = [
     endDate: '2023-04',
     imgSrc: 'hyundai-steel.png',
     demoUrl: 'https://hcorestore.hyundai-steel.com',
-    summary:
-      "현대제철 HCORE-STORE, 철강 제품 전자 상거래 프로젝트",
+    summary: '현대제철 HCORE-STORE, 철강 제품 전자 상거래 프로젝트',
     impact: [
       {
         id: '1',
-        label: "PC/모바일 '바로구매', '제품 검색' 등 제품 검색 파트 프론트엔드 개발",
+        label:
+          "PC/모바일 '바로구매', '제품 검색' 등 제품 검색 파트 프론트엔드 개발",
         children: [
           {
             id: '1-1',
