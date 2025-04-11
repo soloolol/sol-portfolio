@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { getToasts, subscribe } from './store';
 import Toast from './Toast';
