@@ -1,7 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import type { Skill } from '@/types/skill';
-
-const data: Skill[] = [
+const data = [
   {
     name: 'HTML5',
     tagStyle: 'i',
@@ -58,15 +55,4 @@ const data: Skill[] = [
   },
 ];
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Skill[]>
-) {
-  switch (req.method) {
-    case 'GET':
-      return res.status(200).json(data);
-
-    default:
-      return res.status(405);
-  }
-}
+export default data;

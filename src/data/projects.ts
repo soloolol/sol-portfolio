@@ -1,7 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import type { Project } from '@/types/project';
-
-const data: Project[] = [
+const data = [
   {
     name: '포트폴리오 웹사이트',
     techStack: ['React', 'Next.js', 'TailwindCSS'],
@@ -230,15 +227,4 @@ const data: Project[] = [
   },
 ];
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Project[]>
-) {
-  switch (req.method) {
-    case 'GET':
-      return res.status(200).json(data);
-
-    default:
-      return res.status(405);
-  }
-}
+export default data;
