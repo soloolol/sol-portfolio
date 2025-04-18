@@ -7,38 +7,28 @@ const data = [
     imgSrc: 'portfolio-website.png',
     startDate: '2025-02',
     endDate: '2025-02',
-    summary: '개인 포트폴리오 웹사이트 제작 및 배포',
+    summary: '개인 기술 포트폴리오 웹사이트 제작 및 배포.',
     impact: [
       {
         id: '1',
-        label: '초기 렌더링 최적화',
-        children: [
-          {
-            id: '1-2',
-            label:
-              '데이터 변경 빈도가 낮은 인덱스 페이지에 ISR과 Revalidation API를 적용하여 렌더링 및 리소스 요청을 최적화, 성능과 효율성 개선',
-          },
-          {
-            id: '1-1',
-            label:
-              'localstorage의 다크모드 상태 값 동기화 로직 개선하여 테마 초기 적용시 재렌더링 국소화',
-          },
-        ],
+        label: 'page 라우트에서 app 라우트로 마이그레이션 → 서버 컴포넌트와 클라이언트 컴포넌트의 책임 분리',
       },
       {
         id: '2',
-        label: '경량화된 토스트 팝업 구현',
-        children: [
-          {
-            id: '2-1',
-            label:
-              '`react-toastify`를 참고하여 필요한 부분만 직접 구현, 불필요한 의존성을 줄이고 성능 최적화',
-          },
-        ],
+        label: '서버 컴포넌트에서 fetch 함수의 캐시 전략(force-cache, no-store)을 적절히 적용해 API 요청 최적화',
+      },      {
+        id: '3',
+        label: '상태 관리를 서버 → 클라이언트 흐름 중심으로 재구성하여 초기 렌더링 속도 개선',
+      },      {
+        id: '4',
+        label: '다크모드 상태를 localStorage와 싱크하여 깜빡임 현상 제거',
+      },      {
+        id: '5',
+        label: '외부 라이브러리 없이 react-toastify 구조를 참고해 경량 토스트 팝업 커스텀 구현',
       },
     ],
     learningPoint:
-      '이벤트 기반 패턴(Subscribe/Notify)을 활용하여, 컴포넌트가 직접 상태를 감지하지 않고 변경 시에만 UI를 업데이트하도록 구현. 이를 통해 상태 관리 라이브러리 없이도 전역 상태를 효율적으로 관리할 수 있음을 학습',
+      '서버 컴포넌트 기반의 최적화 경험과 Next.js 구조 이해도 심화\n이벤트 기반 패턴(Subscribe/Notify)을 활용하여, 컴포넌트가 직접 상태를 감지하지 않고 변경 시에만 UI를 업데이트하도록 구현. 이를 통해 상태 관리 라이브러리 없이도 전역 상태를 효율적으로 관리할 수 있음을 학습',
   },
   {
     name: '경찰청 사이버수사포털 시스템',
@@ -46,7 +36,7 @@ const data = [
     imgSrc: 'cyber-portal.png',
     startDate: '2024-08',
     endDate: '2024-12',
-    summary: '경찰청 포털 시스템 개편 및 검색 고도화 프로젝트 – 개발 리딩',
+    summary: '경찰청 사이버수사포털 개편 프로젝트에서 복잡한 검색 시스템 및 화면 구조 리팩터링을 담당. 개발 리딩.',
     impact: [
       {
         id: '1',
@@ -72,12 +62,12 @@ const data = [
       },
       {
         id: '3',
-        label: '주도적인 개발 리딩을 통한 프로젝트 일정 단축',
+        label: '기획 미확정 상태에서도 주도적으로 개발을 추진, 일정 단축',
         children: [
           {
             id: '3-1',
             label:
-              '불확실한 요구사항 속에서도 선제적 개발을 진행하여 9M/M 프로젝트를 6M/M으로 단축, 기한 내 성공적 완료',
+              '9M/M 예상 프로젝트를 6M/M으로 단축하며 성공적 배포',
           },
         ],
       },
@@ -86,10 +76,11 @@ const data = [
   {
     name: '서울연구원 범죄 예고 신고 지원 서비스',
     techStack: ['Vue.js', 'Java', 'Spring Boot', 'Vite', 'Git'],
+    imgSrc: 'crime_prediction.png',
     startDate: '2024-05',
     endDate: '2024-08',
     summary:
-      '크롤링, OCR 등을 통한 범죄 예고 및 신고 지원 온라인 서비스 구축 – BO & FO 개발',
+      'SNS/웹에서의 범죄 예고를 자동 감지 및 신고할 수 있는 시스템 개발. 프론트엔드 및 일부 백엔드 기능 구현 전반 참여.',
     impact: [
       {
         id: '1',
@@ -125,15 +116,17 @@ const data = [
         ],
       },
     ],
+    learningPoint: '비정형 데이터 처리 프로젝트에서 UX 중심 개발 기획까지 경험\n작은 규모의 프로젝트에서 전체 흐름을 아우르는 시야 확보'
   },
   {
     name: '한국토지주택공사 지식관리시스템',
     techStack: ['JavaScript', 'Java', 'Spring Boot', 'Elasticsearch', 'SVN'],
+    imgSrc: 'kms_search.png',
     startDate: '2024-03',
     endDate: '2024-05',
-    summary: '한국토지주택공사 지식관리시스템 구축 – 검색 파트 개발',
+    summary: '다양한 업무 도메인의 데이터를 통합 검색할 수 있는 KMS(지식관리시스템) 구축 프로젝트에서 검색 파트 개발 담당.',
     impact: [
-      { id: '1', label: '검색 서버 구축 및 개발 프로세스 관리' },
+      { id: '1', label: 'Elasticsearch 기반 검색 서버 구축 및 인덱싱 로직 구현' },
       {
         id: '2',
         label: '통합 검색 페이지 개발',
@@ -141,7 +134,7 @@ const data = [
           {
             id: '2-1',
             label:
-              '보상정보, 건설관리, 법령정보 등 여러 도메인의 데이터를 통합하여 일관된 검색 환경 제공',
+              '여러 도메인의 데이터를 통합하여 일관된 검색 환경 제공',
           },
         ],
       },
@@ -161,10 +154,11 @@ const data = [
   {
     name: '한국의약품 안전관리원',
     techStack: ['Vue.js', 'Java', 'Spring Boot', 'Elasticsearch'],
+    imgSrc: 'drugsafe_dur.png',
     startDate: '2023-09',
     endDate: '2024-01',
     summary:
-      '국내외 의약품 문서를 정보 유형에 따라 자동 분류하는 자동화 시스템 개발',
+      '의약품 관련 문서를 자동 분류하고 검색할 수 있는 시스템 구축. 검색 최적화 및 UI 설계 주도.',
     impact: [
       {
         id: '1',
@@ -207,20 +201,23 @@ const data = [
     endDate: '2023-04',
     imgSrc: 'hyundai-steel.png',
     demoUrl: 'https://hcorestore.hyundai-steel.com',
-    summary: '현대제철 HCORE-STORE, 철강 제품 전자 상거래 프로젝트',
+    summary: '현대제철 B2B 전자상거래 플랫폼(HCORE-STORE) 개발. 제품 구매 및 검색 기능의 프론트엔드 전반을 담당.',
     impact: [
       {
         id: '1',
         label:
-          "PC/모바일 '바로구매', '제품 검색' 등 제품 검색 파트 프론트엔드 개발",
-        children: [
-          {
-            id: '1-1',
-            label:
-              '경력 이상의 책임이 요구되는 작업을 맡아, 업무 외 추가 학습을 병행하며 성공적으로 수행. 주어진 역할을 넘어 주도적으로 해결',
-          },
-        ],
+          "PC/모바일에서의 제품 검색, 필터, 바로 구매 기능 구현",
       },
+      {
+        id: '2',
+        label:
+        '디자인 시스템과 UX 흐름을 고려한 화면 구성'
+      },
+      {
+        id: '3',
+        label:
+        '실무 1년차로서 전자상거래 핵심 화면을 독립 구현'
+      }
     ],
     learningPoint:
       'GitLab, Jenkins, Redmine 등을 활용한 협업 프로세스 경험을 쌓으며, 대규모 프로젝트에서의 효율적인 커뮤니케이션과 일정 관리의 중요성을 학습\nSSR 도입 후 Hydration 오류 발생 → CSR과 SSR의 차이를 직접 체감하며, Hydration 오류 해결 과정에서 Vue의 렌더링 방식에 대한 이해를 심화',
