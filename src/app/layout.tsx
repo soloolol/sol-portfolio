@@ -17,13 +17,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           id="theme-init"
           dangerouslySetInnerHTML={{
             __html: `(function(){
-            const theme = localStorage.getItem('theme');
-            if (!theme || theme === 'dark') {
-              document.documentElement.classList.add('dark');
-              localStorage.setItem('theme', 'dark');
-            } else {
-              document.documentElement.classList.remove('dark');
-            }})();`,
+              try {
+                const theme = localStorage.getItem('theme');
+                if (!theme || theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                  localStorage.setItem('theme', 'dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (_) {}
+            })();`,
           }}
         />
       </head>
