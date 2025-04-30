@@ -2,6 +2,8 @@ import SkillList from '@/components/SkillList';
 import ProjectList from '@/components/ProjectList';
 import { fetchSkills, fetchProjects } from '@/lib/api';
 import ContactList from '@/components/ContactList';
+import IntroButtons from '@/components/IntroButtons';
+import Introduction from '@/components/Introduction';
 
 export default async function Home() {
   const [skills, projects] = await Promise.all([
@@ -13,12 +15,12 @@ export default async function Home() {
     <main className="container max-w-5xl mx-auto px-6 py-12">
       <section
         id="intro"
-        className="flex flex-col space-y-14 justify-center items-center my-12 md:my-24"
+        className="flex flex-col justify-between items-center md:max-w-2xl mx-auto pb-12"
       >
         <div className="flex justify-center items-center">
           <div className="shrink-0 mb-6 md:mb-0 md:mr-10">
             <img
-              className="w-56 h-56 rounded-full border-2 object-cover animate-wiggle"
+              className="w-56 h-56 rounded-full border-2 object-cover animate-wiggle shadow-xl"
               src="/sol.jpeg"
               alt="profileImage"
             />
@@ -28,29 +30,8 @@ export default async function Home() {
             <p className="text-xl mb-4 tracking-wide">Creative Engineer</p>
           </div>
         </div>
-        <div className="max-w-2xl text-gray-500 dark:text-gray-400 text-center">
-          <p className="intro-left-quotation font-serif text-5xl text-gray-400 dark:text-gray-300 text-left">
-            &lsquo;
-          </p>
-          <p className="indent-5">
-            데이터 파이프라인 구축, 검색 시스템 개발, 전자상거래 프론트 구현 등
-            다양한 영역의 실무를 경험하며, 시스템 전반의 구조와 데이터 흐름을
-            이해하는 시야를 갖추게 되었습니다. 기능 단위의 구현을 넘어, 전체
-            서비스의 맥락 속에서 기술적 완성도와 사용자 경험을 함께 고려하며
-            문제를 해결해왔습니다.
-          </p>
-          <p>
-            현재는 React와 TypeScript 기반의 프론트엔드 개발에 집중하고 있으며,
-            컴포넌트 중심의 설계, UI/UX 개선, 사용자 흐름 최적화 역량을 키워가고
-            있습니다. 디자인 전공자로서의 감각과 논리적인 사고를 바탕으로
-            직관적이고 세련된 인터페이스 구현에 강점을 가지고 있으며, 세심한
-            개선과 지속적인 학습을 통해 더 나은 경험을 만들어가는 개발자가
-            되고자 합니다.
-          </p>
-          <p className="intro-right-quotation font-serif text-5xl text-gray-400 dark:text-gray-300 text-right">
-            &rsquo;
-          </p>
-        </div>
+        <IntroButtons />
+        <Introduction />
       </section>
 
       <section id="skills" className="mt-16">

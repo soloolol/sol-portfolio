@@ -3,11 +3,11 @@ import type { Project } from '@/types/project';
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
   return (
-    <div className="grid grid-cols-1 gap-6">
+    <div className="grid grid-cols-1 gap-9">
       {projects?.map((item) => (
         <article
           key={item.name}
-          className="flex flex-col md:flex-row bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+          className="flex flex-col md:flex-row shadow-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300"
         >
           <div className="md:shrink-0 md:basis-1/3">
             <img
@@ -46,7 +46,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
                     href={item.demoUrl}
                     className="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
                   >
-                    바로가기
+                    🔗바로가기
                   </a>
                 )}
               </div>

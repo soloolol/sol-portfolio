@@ -18,14 +18,7 @@ export default function Error({
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center px-4">
-      <img
-        src="/error-illustration.svg"
-        alt="Error Illustration"
-        className="w-64 h-64 mb-6 animate-bounce-slow"
-      />
-      <h1 className="text-4xl font-bold text-red-500 mb-4">
-        앗! 오류가 발생했어요 😵
-      </h1>
+      <h1 className="text-4xl font-bold mb-4">앗! 오류가 발생했어요 😵</h1>
       <p className="text-gray-600 dark:text-gray-400 mb-6">
         문제가 생겼지만 걱정 마세요. 곧 해결할게요!
       </p>

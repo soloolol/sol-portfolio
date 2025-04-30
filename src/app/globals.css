@@ -6,6 +6,10 @@
   scroll-margin-top: 70px;
 }
 
+section#intro {
+  height: calc(100vh - 7rem);
+}
+
 .intro-left-quotation {
   line-height: 0;
 }

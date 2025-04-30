@@ -1,32 +1,16 @@
 'use client';
 
 import { toast } from '@/components/toast/store';
+import { handleCopyWithCallback } from '@/utils/clipboard';
 
 export default function Contact() {
-  const copyToClipboard = (text: string) => {
-    return navigator.clipboard.writeText(text);
-  };
-
-  const handleCopyEmail = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    cb: () => void
-  ) => {
-    const email = e.currentTarget.querySelector('span')?.textContent;
-    if (email) {
-      copyToClipboard(email)
-        .then(() => cb())
-        .catch((error) => {
-          console.error('복사 실패:', error);
-        });
-    }
-  };
   return (
-    <article className="bg-lime-100 shadow-md rounded-lg p-6 max-sm:text-[15px] max-sm:px-3 hover:scale-105 transition-transform duration-300">
+    <article className="max-sm:text-[15px]">
       <div className="flex flex-col items-center justify-center gap-y-4">
         <a
           href="https://github.com/soloolol"
           target="_blank"
-          className="flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+          className="flex items-center justify-center space-x-2 w-80 rounded-full bg-gray-700 shadow-gray-700/50 shadow-md text-gray-200 hover:scale-105 transition-transform duration-300"
         >
           <i className="fa-brands fa-github" />
           <span>GitHub</span>
@@ -34,21 +18,21 @@ export default function Contact() {
         <a
           href="https://torybean.tistory.com/"
           target="_blank"
-          className="flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+          className="flex items-center justify-center space-x-2 w-80 rounded-full bg-amber-500 shadow-amber-500/50 shadow-md text-gray-200 hover:scale-105 transition-transform duration-300"
         >
           <i className="fa-brands fa-b" />
           <span>Blog</span>
         </a>
         <a
-          onClick={(event) =>
-            handleCopyEmail(event, () =>
+          onClick={() =>
+            handleCopyWithCallback('soloolol222@gmail.com', () =>
               toast({ message: '클립보드에 복사되었습니다! 👏🏻' })
             )
           }
-          className="flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+          className="flex items-center justify-center space-x-2 w-80 rounded-full bg-blue-400 shadow-blue-400/50 shadow-md text-gray-100 hover:scale-105 transition-transform duration-300"
         >
           <i className="fa-regular fa-envelope" />
-          <span>soloolol222@gmail.com</span>
+          <span>E-mail</span>
         </a>
       </div>
     </article>
