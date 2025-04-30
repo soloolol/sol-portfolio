@@ -15,7 +15,7 @@ export function ToastContainer() {
   const toasts = getToasts();
 
   return (
-    <div className="fixed bottom-20 right-4 z-30 w-full flex flex-col gap-2">
+    <div className="fixed bottom-20 z-30 w-full flex flex-col gap-2 text-gray-800 text-sm font-medium ">
       {toasts.map(({ id, message }) => (
         <div key={id}>
           <Toast message={message} />
