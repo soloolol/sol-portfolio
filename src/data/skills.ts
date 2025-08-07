@@ -1,11 +1,5 @@
 const data = [
   {
-    name: 'HTML5',
-    tagStyle: 'i',
-    fontAwesomeClass: 'fa-brands fa-html5',
-    iconColor: 'text-red-500',
-  },
-  {
     name: 'JavaScript',
     tagStyle: 'i',
     fontAwesomeClass: 'fa-brands fa-js',
@@ -16,6 +10,12 @@ const data = [
     tagStyle: 'i',
     fontAwesomeClass: 'fa-brands fa-java',
     iconColor: 'text-orange-500',
+  },
+  {
+    name: 'ReactNative',
+    tagStyle: 'i',
+    fontAwesomeClass: 'fa-brands fa-react',
+    iconColor: 'text-blue-500',
   },
   {
     name: 'React',

@@ -3,11 +3,17 @@ import type { Project } from '@/types/project';
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
   return (
-    <div className="grid grid-cols-1 gap-9">
+    <div className="md:w-4/5 grid grid-cols-1 gap-9 px-5">
+      <div className="text-left pl-3">
+        <h3 className="text-2xl font-semibold  text-gray-600">
+          메이팜소프트{'  '}
+          <span className="text-lg">2023.01 ~ 2025.01</span>
+        </h3>
+      </div>
       {projects?.map((item) => (
         <article
           key={item.name}
-          className="flex flex-col md:flex-row shadow-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300"
+          className="flex flex-col md:flex-row bg-indigo-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-3xl overflow-hidden hover:scale-105 transition-transform duration-300"
         >
           <div className="md:shrink-0 md:basis-1/3">
             <img
