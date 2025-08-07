@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 [id] {
   scroll-margin-top: 70px;
 }
 
 section#intro {
-  height: calc(100vh - 7rem);
+  height: calc(100vh - 4rem);
+  min-height: fit-content;
 }
 
 .intro-left-quotation {

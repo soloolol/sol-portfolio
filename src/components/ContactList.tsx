@@ -25,7 +25,7 @@ export default function Contact() {
         </a>
         <a
           onClick={() =>
-            handleCopyWithCallback('soloolol222@gmail.com', () =>
+            handleCopyWithCallback('soloolol.dev@gmail.com', () =>
               toast({ message: '클립보드에 복사되었습니다! 👏🏻' })
             )
           }
