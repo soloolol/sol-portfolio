@@ -95,7 +95,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="projects" className="flex flex-col items-center py-16">
+      <section id="career" className="flex flex-col items-center py-16">
         <h2 className="relative text-4xl font-bold mb-6 text-center">
           Career
           <img

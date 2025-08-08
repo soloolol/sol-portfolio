@@ -28,6 +28,9 @@ function Header({ onToggleMenu }: Pick<AsideProps, 'onToggleMenu'>) {
             >
               프로젝트
             </a>
+            <a href="#career" className="hover:text-blue-500 transition-colors">
+              경력
+            </a>
             <a
               href="#contact"
               className="hover:text-blue-500 transition-colors"

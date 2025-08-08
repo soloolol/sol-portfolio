@@ -56,11 +56,9 @@ export default function BinuContent() {
               <li>
                 <strong>기술 스택:</strong>
                 <ul className="ml-6 list-disc space-y-1">
-                  <li>React Native, Next.js, TypeScript, TailwindCSS</li>
-                  <li>
-                    Zustand, TanStack Query (예정), WebView, Naver Maps SDK
-                  </li>
-                  <li>PNPM, Monorepo, ESLint, Prettier, CI/CD 등</li>
+                  <li>React Native, React, Next.js, TypeScript, TailwindCSS</li>
+                  <li>Zustand, Zod, TanStack Query (예정), WebView</li>
+                  <li>PNPM, Monorepo, ESLint, Prettier</li>
                 </ul>
               </li>
             </ul>
@@ -90,8 +88,8 @@ export default function BinuContent() {
                 </ul>
               </li>
               <li>
-                <strong>하이브리드 앱 구성</strong>: Native는 기능 담당,
-                WebView는 UI 담당
+                <strong>하이브리드 앱 구성</strong>: Native- 네비게이션, 기능
+                접근/ WebView- 화면
               </li>
               <li>
                 <strong>상태 관리 및 로그인 흐름 개선</strong>: Zustand로 퍼미션
