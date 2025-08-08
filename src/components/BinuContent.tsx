@@ -144,10 +144,6 @@ export default function BinuContent() {
                 <strong>상태 관리 도구 선택</strong>: 단순한 전역 상태와 비동기
                 흐름에 맞는 Zustand 사용
               </li>
-              <li>
-                React Query → TanStack Query로 전환 예정: 캐시 활용으로 검색
-                속도 개선 목표
-              </li>
             </ul>
           </div>
 
