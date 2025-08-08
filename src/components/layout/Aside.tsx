@@ -31,6 +31,9 @@ function Aside({ isMenuOpen, onToggleMenu }: AsideProps) {
           <a href="#projects" className="hover:text-blue-500 transition-colors">
             프로젝트
           </a>
+          <a href="#career" className="hover:text-blue-500 transition-colors">
+            경력
+          </a>
           <a href="#contact" className="hover:text-blue-500 transition-colors">
             연락처
           </a>
