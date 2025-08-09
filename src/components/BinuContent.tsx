@@ -15,14 +15,18 @@ export default function BinuContent() {
           <h2 className="text-2xl font-bold mb-2">
             🧼 비누있어? | 화장실 위생 리뷰 앱
           </h2>
-          <button className="flex items-center gap-2 py-1 px-5 rounded-2xl bg-gray-700/70 text-white">
+          <a
+            className="flex items-center gap-2 py-1 px-5 rounded-2xl bg-gray-700/70 text-white"
+            href="https://www.figma.com/design/ry3a6qSlTls7arYqEqC5bw/%EB%B9%84%EB%88%84%EC%9E%88%EC%96%B4-?node-id=30-659&t=kGv451yoo41Kh7Tm-1"
+            target="_blank"
+          >
             figma
             <img
               width="12"
               alt="Figma-logo"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/64px-Figma-logo.svg.png?20250625151003"
             />
-          </button>
+          </a>
         </div>
         <p>
           화장실의 비누 유무, 전반적인 위생 상태를 사용자 리뷰를 통해 공유하고
