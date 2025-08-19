@@ -4,7 +4,8 @@ import { fetchSkills, fetchProjects } from '@/lib/api';
 import ContactList from '@/components/ContactList';
 import IntroButtons from '@/components/IntroButtons';
 import Introduction from '@/components/Introduction';
-import BinuContent from '@/components/BinuContent';
+import { NestedListComponent } from '@/components/ui/NestedList';
+import PersonalProject from '@/components/PersonalProject';
 
 export default async function Home() {
   const [skills, projects] = await Promise.all([
@@ -37,7 +38,7 @@ export default async function Home() {
 
       <section
         id="skills"
-        className="flex flex-col items-center py-16 w-full bg-gray-900"
+        className="flex flex-col items-center py-16 w-full bg-gray-800"
       >
         <div>
           <h2 className="text-white text-4xl font-extrabold mb-6 text-center">
@@ -67,10 +68,10 @@ export default async function Home() {
 
       <section
         id="projects"
-        className="flex flex-col items-center py-16 bg-[#4FD6B2]/25"
+        className="flex flex-col items-center py-16 bg-[#c0fbec]/60 text-gray-800"
       >
         <h2 className="text-4xl font-bold mb-6 text-center">개인 프로젝트</h2>
-        <div className="flex flex-col items-center md:w-3/5 sm:px-2 md:px-20 my-10 space-y-10 bg-white/10 rounded-2xl shadow-md">
+        <div className="flex flex-col items-center md:w-3/5 p-3 mx-2 my-5 md:px-20 md:py-10 md:my-10 space-y-10 bg-white/10 rounded-2xl shadow-md">
           <div className="relative w-[350px] mx-auto aspect-[9/19.5]">
             {/* 비디오 먼저 */}
             <video
@@ -89,9 +90,83 @@ export default async function Home() {
               className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none"
             />
           </div>
-          <div className="md:max-w-4xl">
-            <BinuContent />
-          </div>
+          <PersonalProject />
+        </div>
+        <div className="flex flex-col items-center md:w-3/5 p-2 mx-2 my-5 md:px-20 md:py-10 md:my-10 space-y-10 bg-white/10 rounded-2xl shadow-md">
+          <section className="flex flex-col items-center md:max-w-4xl text-[15px] leading-relaxed">
+            <div className="text-center space-y-3">
+              <div className="flex items-center justify-center gap-5">
+                <h2 className="text-xl md:text-2xl font-bold leading-none">
+                  👤 포트폴리오 웹사이트
+                </h2>
+                <a
+                  className="flex items-center gap-2 py-1 px-3 md:px-5 rounded-2xl bg-gray-700/70 text-white"
+                  href="https://github.com/soloolol"
+                  target="_blank"
+                >
+                  github
+                  <i className="fa-brands fa-github" />
+                </a>
+              </div>
+              <div>
+                <p>개인 기술 포트폴리오 웹사이트 제작 및 배포</p>
+              </div>
+            </div>
+            <div className="flex flex-col space-y-7 py-8 w-4/5 text-sm md:text-[15px]">
+              <div className="flex flex-wrap">
+                {['React', 'Next.js', 'TailwindCSS'].map((stack) => (
+                  <span
+                    key={stack}
+                    className="text-sm mr-0.5 mb-0.5 px-2 py-0.5 rounded-md border border-gray-300 dark:border-gray-600"
+                  >
+                    {stack}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-col justify-center">
+                <NestedListComponent
+                  items={[
+                    {
+                      id: '1',
+                      label:
+                        'page 라우트에서 app 라우트로 마이그레이션 → 서버 컴포넌트와 클라이언트 컴포넌트의 책임 분리',
+                    },
+                    {
+                      id: '2',
+                      label:
+                        '서버 컴포넌트에서 fetch 함수의 캐시 전략(force-cache, no-store)을 적절히 적용해 API 요청 최적화',
+                    },
+                    {
+                      id: '3',
+                      label:
+                        '상태 관리를 서버 → 클라이언트 흐름 중심으로 재구성하여 초기 렌더링 속도 개선',
+                    },
+                    {
+                      id: '4',
+                      label:
+                        '다크모드 상태를 localStorage와 싱크하여 깜빡임 현상 제거',
+                    },
+                    {
+                      id: '5',
+                      label:
+                        '외부 라이브러리 없이 react-toastify 구조를 참고해 경량 토스트 팝업 커스텀 구현',
+                    },
+                  ]}
+                />
+              </div>
+              <div className="flex flex-col justify-center mt-3">
+                <p className="whitespace-pre-wrap text-sm">
+                  ✅
+                  <a className="underline font-semibold italic decoration-sky-500 mx-3">
+                    learning point :
+                  </a>
+                  서버 컴포넌트 기반의 최적화 경험과 Next.js 구조 이해도 심화,
+                  이벤트 기반 패턴(Subscribe/Notify)을 활용한 UI 업데이트 방식
+                  학습
+                </p>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 

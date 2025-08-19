@@ -5,7 +5,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
   return (
     <div className="md:w-4/5 grid grid-cols-1 gap-9 px-5">
       <div className="text-left pl-3">
-        <h3 className="text-2xl font-semibold  text-gray-600">
+        <h3 className="text-2xl font-semibold  text-gray-600 dark:text-gray-300">
           메이팜소프트{'  '}
           <span className="text-lg">2023.01 ~ 2025.01</span>
         </h3>
