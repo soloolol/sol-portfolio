@@ -9,41 +9,44 @@ export default function BinuContent() {
     setIsBinuOpen((prev) => !prev);
   };
   return (
-    <section className="flex flex-col items-center text-gray-800 text-[15px] leading-relaxed">
-      <div className="text-center p-5">
+    <section className="flex flex-col items-center md:max-w-4xl text-[15px] leading-relaxed">
+      <div className="text-center space-y-3">
         <div className="flex items-center justify-center gap-5">
-          <h2 className="text-2xl font-bold mb-2">
+          <h2 className="text-xl md:text-2xl font-bold leading-none">
             🧼 비누있어? | 화장실 위생 리뷰 앱
           </h2>
           <a
-            className="flex items-center gap-2 py-1 px-5 rounded-2xl bg-gray-700/70 text-white"
+            className="flex items-center gap-2 py-1 px-3 md:px-5 rounded-2xl bg-gray-700/70 text-white"
             href="https://www.figma.com/design/ry3a6qSlTls7arYqEqC5bw/%EB%B9%84%EB%88%84%EC%9E%88%EC%96%B4-?node-id=30-659&t=kGv451yoo41Kh7Tm-1"
             target="_blank"
           >
             figma
             <img
-              width="12"
+              width="10 md:12"
               alt="Figma-logo"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/64px-Figma-logo.svg.png?20250625151003"
             />
           </a>
         </div>
-        <p>
-          화장실의 비누 유무, 전반적인 위생 상태를 사용자 리뷰를 통해 공유하고
-          확인할 수 있는 하이브리드 앱
-        </p>
-        <p>
-          React Native + Next.js 기반의 WebView 하이브리드 구조로 제작, 위치
-          기반 리뷰 작성, 지도 기반 탐색, 위생 정보 공유 기능을 제공
-        </p>
-        <div className="flex justify-end">
-          <button
-            className="py-2 px-5 rounded-2xl bg-teal-200 shadow-sm"
-            onClick={() => toggleBinuDetails()}
-          >
-            {isBinuOpen ? '접어두기' : '펼쳐보기'}
-          </button>
+        <div>
+          <p>
+            화장실의 비누 유무, 전반적인 위생 상태를 사용자 리뷰를 통해 공유하고
+            확인할 수 있는 하이브리드 앱
+          </p>
+          <p>
+            React Native + Next.js 기반의 WebView 하이브리드 구조로 제작, 위치
+            기반 리뷰 작성, 지도 기반 탐색, 위생 정보 공유 기능을 제공
+          </p>
         </div>
+      </div>
+
+      <div className="flex items-center justify-end w-full text-sm md:text-[15px]">
+        <button
+          className="py-2 px-5 rounded-2xl bg-[#97fce3] shadow-sm"
+          onClick={() => toggleBinuDetails()}
+        >
+          {isBinuOpen ? '접어두기' : '펼쳐보기'}
+        </button>
       </div>
 
       {isBinuOpen && (
