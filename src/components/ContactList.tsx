@@ -15,14 +15,14 @@ export default function Contact() {
           <i className="fa-brands fa-github" />
           <span>GitHub</span>
         </a>
-        <a
+        {/* <a
           href="https://torybean.tistory.com/"
           target="_blank"
           className="flex items-center justify-center space-x-2 w-80 rounded-full bg-amber-500 shadow-amber-500/50 shadow-md text-gray-200 hover:scale-105 transition-transform duration-300"
         >
           <i className="fa-brands fa-b" />
           <span>Blog</span>
-        </a>
+        </a> */}
         <a
           onClick={() =>
             handleCopyWithCallback('soloolol.dev@gmail.com', () =>
